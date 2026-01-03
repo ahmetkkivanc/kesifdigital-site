@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#1F9E9A" />
+  <meta name="color-scheme" content="light" />
+
+  <title>Keşif Digital — Kurumsal Dijital Pazarlama Sistemleri</title>
+  <meta name="description" content="Keşif Digital, cam balkon & pergola işletmeleri için reklam yönetimi, otomasyon ve ölçülebilir dönüşüm altyapıları kurar." />
+  <meta name="robots" content="index,follow" />
+
+  <!-- Minimal inline favicon (SVG) -->
+  <link rel="icon" type="image/svg+xml" href='data:image/svg+xml,
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+      <defs>
+        <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+          <stop offset="0" stop-color="%231F9E9A"/>
+          <stop offset="1" stop-color="%2329c7c2"/>
+        </linearGradient>
+      </defs>
+      <rect width="64" height="64" rx="16" fill="url(%23g)"/>
+      <path d="M22 40c0-9 7-16 16-16h6v6h-6c-5.5 0-10 4.5-10 10v2h-6v-2z" fill="white" opacity="0.95"/>
+      <circle cx="44" cy="22" r="4" fill="white" opacity="0.95"/>
+    </svg>' />
+
+  <style>
+    :root{
+      --brand:#1F9E9A;
+      --ink:#0f172a;
+      --muted:#475569;
+      --line:rgba(15, 23, 42, .10);
+      --bg:#ffffff;
+      --card:rgba(255,255,255,.78);
+      --shadow:0 18px 40px rgba(15,23,42,.10);
+      --radius:18px;
+      --max:1080px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
+      color:var(--ink);
+      background:
+        radial-gradient(900px 420px at 22% -10%, rgba(31,158,154,.18), transparent 60%),
+        radial-gradient(820px 380px at 85% 8%, rgba(31,158,154,.14), transparent 55%),
+        linear-gradient(180deg, #ffffff 0%, #fbfeff 70%, #ffffff 100%);
+      overflow-x:hidden;
+    }
+
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:var(--max);margin:0 auto;padding:0 18px}
+
+    /* Top */
+    header{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter:blur(10px);
+      background:rgba(255,255,255,.72);
+      border-bottom:1px solid var(--line);
+    }
+    .top{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:14px 0;
+      gap:12px;
+    }
+    .logo{
+      display:flex; align-items:center; gap:10px;
+      font-weight:750; letter-spacing:-.2px;
+    }
+    .mark{
+      width:12px;height:12px;border-radius:999px;background:var(--brand);
+      box-shadow:0 0 0 6px rgba(31,158,154,.14);
+    }
+    nav{
+      display:flex; gap:8px; align-items:center;
+      color:var(--muted); font-size:14px;
+    }
+    nav a{
+      padding:8px 10px;border-radius:12px;
+    }
+    nav a:hover{background:rgba(31,158,154,.08);color:var(--ink)}
+
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      height:44px; padding:0 14px;
+      border-radius:12px; font-weight:650;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.86);
+      box-shadow:0 10px 26px rgba(15,23,42,.08);
+      transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+      user-select:none;
+      white-space:nowrap;
+    }
+    .btn:hover{transform:translateY(-1px);box-shadow:0 16px 34px rgba(15,23,42,.12)}
+    .btn-primary{
+      border:1px solid rgba(31,158,154,.35);
+      background:linear-gradient(135deg, rgba(31,158,154,.95), rgba(31,158,154,.75));
+      color:#fff;
+      box-shadow:0 16px 36px rgba(31,158,154,.22);
+    }
+    .btn-primary:hover{box-shadow:0 20px 44px rgba(31,158,154,.28)}
+
+    /* Hero */
+    main{padding:34px 0 28px}
+    .hero{
+      border:1px solid var(--line);
+      border-radius:calc(var(--radius) + 6px);
+      background:var(--card);
+      box-shadow:var(--shadow);
+      padding:28px;
+      position:relative;
+      overflow:hidden;
+    }
+    .hero::before{
+      content:"";
+      position:absolute; inset:-120px -160px auto auto;
+      width:520px;height:520px;border-radius:999px;
+      background:radial-gradient(circle at 30% 30%, rgba(31,158,154,.28), transparent 60%);
+      pointer-events:none;
+    }
+
+    .kicker{
+      display:inline-flex; align-items:center; gap:10px;
+      padding:7px 10px; border-radius:999px;
+      background:rgba(31,158,154,.10);
+      border:1px solid rgba(31,158,154,.18);
+      color:rgba(31,158,154,.98);
+      font-size:12px; font-weight:700;
+      letter-spacing:.2px;
+    }
+    h1{
+      margin:14px 0 10px;
+      font-size:clamp(28px, 3.6vw, 44px);
+      line-height:1.08;
+      letter-spacing:-.7px;
+    }
+    .sub{
+      margin:0;
+      max-width:68ch;
+      color:var(--muted);
+      line-height:1.7;
+      font-size:16px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:14px;
+      margin-top:18px;
+      align-items:stretch;
+    }
+    .panel{
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      background:rgba(255,255,255,.74);
+      padding:18px;
+      box-shadow:0 12px 28px rgba(15,23,42,.07);
+    }
+    .panel h2{
+      margin:0 0 10px;
+      font-size:16px;
+      letter-spacing:-.2px;
+    }
+    .list{
+      margin:0; padding:0;
+      list-style:none;
+      display:grid; gap:10px;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.6;
+    }
+    .li{
+      display:flex; gap:10px; align-items:flex-start;
+    }
+    .bullet{
+      width:10px;height:10px;border-radius:4px;
+      margin-top:5px;
+      background:rgba(31,158,154,.85);
+      flex:0 0 auto;
+    }
+
+    .cta{
+      display:flex; gap:10px; flex-wrap:wrap;
+      margin-top:14px;
+    }
+
+    /* Footer */
+    footer{
+      padding:18px 0 32px;
+      color:var(--muted);
+      font-size:13px;
+    }
+    .foot{
+      display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap;
+      border-top:1px solid var(--line);
+      padding-top:14px;
+    }
+
+    /* Responsive */
+    @media (max-width: 880px){
+      nav{display:none}
+      .grid{grid-template-columns:1fr}
+    }
+    @media (max-width: 520px){
+      .btn{width:100%}
+      .cta{width:100%}
+    }
+  </style>
+
+  <!-- Structured data (statik vitrin için yeterli) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Keşif Digital",
+    "description": "Cam Balkon & Pergola işletmeleri için reklam yönetimi, otomasyon ve ölçülebilir dönüşüm altyapıları.",
+    "email": "kesifdigital@gmail.com",
+    "telephone": "+90 532 066 8842"
+  }
+  </script>
+</head>
+
+<body>
+  <header>
+    <div class="wrap">
+      <div class="top">
+        <a class="logo" href="#top" aria-label="Keşif Digital">
+          <span class="mark" aria-hidden="true"></span>
+          <span>Keşif Digital</span>
+        </a>
+
+        <nav aria-label="Menü">
+          <a href="#hizmet">Hizmet</a>
+          <a href="#iletisim">İletişim</a>
+        </nav>
+
+        <a class="btn btn-primary" href="#iletisim">İletişime Geç</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <div class="wrap">
+      <section class="hero">
+        <div class="kicker">Kurumsal • Minimal • Net</div>
+
+        <h1>Cam Balkon &amp; Pergola için<br/>dijital pazarlama sistemleri.</h1>
+
+        <p class="sub">
+          Keşif Digital; reklam yönetimi, otomasyon ve raporlama ile
+          işletmeni daha <b>ölçülebilir</b> ve <b>takip edilebilir</b> bir düzene taşır.
+          Bu sayfa, markanın kurumsal vitrini olarak sade tutulmuştur.
+        </p>
+
+        <div class="grid">
+          <div class="panel" id="hizmet">
+            <h2>Ne yapıyoruz?</h2>
+            <ul class="list">
+              <li class="li"><span class="bullet"></span><span><b>Reklam Yönetimi:</b> Meta odaklı performans reklamları.</span></li>
+              <li class="li"><span class="bullet"></span><span><b>Otomasyon:</b> Form → WhatsApp/E-posta akışı, hızlı geri dönüş.</span></li>
+              <li class="li"><span class="bullet"></span><span><b>Raporlama:</b> Net metrikler, anlaşılır özet.</span></li>
+            </ul>
+
+            <div class="cta" style="margin-top:14px">
+              <!-- WhatsApp: 05320668842 -> 905320668842 -->
+              <a class="btn btn-primary" target="_blank" rel="noopener"
+                 href="https://wa.me/905320668842?text=Merhaba%20Ke%C5%9Fif%20Digital%2C%20bilgi%20almak%20istiyorum.">
+                 WhatsApp
+              </a>
+              <a class="btn" href="mailto:kesifdigital@gmail.com">E-posta</a>
+              <a class="btn" href="tel:+905320668842">Ara</a>
+            </div>
+          </div>
+
+          <div class="panel" id="iletisim">
+            <h2>İletişim</h2>
+            <ul class="list">
+              <li class="li"><span class="bullet"></span><span><b>WhatsApp:</b> 0532 066 8842</span></li>
+              <li class="li"><span class="bullet"></span><span><b>E-posta:</b> kesifdigital@gmail.com</span></li>
+            </ul>
+
+            <p class="sub" style="font-size:14px;margin-top:12px">
+              Kısa bir mesaj yeter: “İl/ilçe + hizmet + hedef” yaz, net şekilde dönüş yapalım.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <div class="foot">
+          <span>© <span id="y"></span> Keşif Digital</span>
+          <span>Kurumsal vitrin sayfası</span>
+        </div>
+      </footer>
+    </div>
+  </main>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
